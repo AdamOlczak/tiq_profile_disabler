@@ -10,7 +10,7 @@ To install this tool:
 2. Go to Custom Tools tab.
 3. Click + Button
 4. Switch to Add Custom Tools tab
-5. Paste the following address into the Add bu URL field: https://cdn.jsdelivr.net/gh/AdamOlczak/tiq_profile_disabler@latest/profile-disabler.json
+5. Paste the following address into the Add bu URL field: https://adamolczak.github.io/tiq_profile_disabler/profile-disabler.json
 6. Click Add Custom Tool button
 7. You will find the tool in the Custom Tools tab named Profile Disabler
 
