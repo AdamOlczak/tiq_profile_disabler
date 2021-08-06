@@ -1,0 +1,91 @@
+<script type="text/x-handlebars">
+    {{#if this.debug}}
+    <h4>Debugger</h4>
+    <div>
+        <p>Press this button to trigger JS debugger statement</p>
+        <button data-func="debug">debugger;</button>
+    </div>
+    {{/if}}
+    
+    {{#ifN finished }}
+        <div class="container messages">
+
+            {{#if loading}}
+            <div class="bg-info" style="padding: 5px;">
+                <p>Please wait while we load your accounts</p>
+            </div>
+            {{/if}}
+            
+            {{#if error }}
+            <div class="bg-danger" style="padding: 5px;">
+                <p>We have encountered an error. Please find the details below.</p>
+                <p>{{ error }}</p>
+            </div>
+            {{/if}}
+        </div>
+
+        {{#if accounts }}
+        <div class="container">
+            <h4>Account</h4>
+            <div>
+                <select class="form-control" name="accounts" id="accounts"  data-func="getProfiles" data-arg="account">
+                {{#select selectedAccount }}
+                {{#each accounts}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{/select}}
+                </select>
+            </div>
+            <button class="btn" data-func="getProfiles">Select account</button>
+            <button class="btn" data-func="getAccounts">Refresh</button>
+
+        </div>
+        {{/if}}
+        {{#if profiles }}
+        <div class="container">
+            <h4>Profiles</h4>
+            {{#ifN areProfilesSelected}}
+            <div>
+                <select class="form-control" name="profiles" id="profiles"  data-func="selectProfiles" data-arg="profiles" multiple rows="10">
+                    {{#each profiles}}
+                    <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <button class="btn" data-func="selectProfiles">Select Profiles</button>
+            {{/ifN}}
+            {{#if areProfilesSelected}}
+            <div>
+                <p>You've selected the following profiles to be disabled:</p>
+                <ul>
+                    {{#each selectedProfiles}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                <p>Select environments you would like to publish to:</p>
+                <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="dev" data-func="disableProfiles" data-arg="env-dev"> dev
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox2" value="qa" data-func="disableProfiles" data-arg="env-qa"> qa
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox3" value="prod" data-func="disableProfiles" data-arg="env-prod"> prod
+                </label>
+                <p>Would you like to continue?</p>
+                <button class="btn btn-danger" data-func="disableProfiles">Yes, disable</button>
+                <button class="btn" data-func="changeProfileSelection">Change or Cancel</button>
+            </div>
+            {{/if}}
+        </div>
+        {{/if}}
+
+    {{/ifN}}
+    {{#if finished}}
+    <h4>Finished</h4>
+    <p>The profile disabling is currently in progress.</p>
+    <p>Do not close the browser window other wise it will be interrupted.</p>
+    <p>We are not able to send a notification when the process has been finished. The process is finished when the profile switching, modification and publishing is no longer happening.</p>
+    <button class="btn" data-func="restart">Start again</button>
+    {{/if}}
+</script>
