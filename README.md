@@ -1,6 +1,6 @@
 # Profile Disabler
 
-This is a (Tealium Tools)[https://chrome.google.com/webstore/detail/tealium-tools/gidnphnamcemailggkemcgclnjeeokaa] - Custom Tool which creates extension that will disable running Tealium iQ on the page.
+This is a [Tealium Tools](https://chrome.google.com/webstore/detail/tealium-tools/gidnphnamcemailggkemcgclnjeeokaa) - Custom Tool which creates extension that will disable running Tealium iQ on the page.
 
 # Installation
 
@@ -10,14 +10,14 @@ To install this tool:
 2. Go to Custom Tools tab.
 3. Click + Button
 4. Switch to Add Custom Tools tab
-5. Paste the following address into the Add bu URL field: 
+5. Paste the following address into the Add bu URL field: https://raw.githubusercontent.com/AdamOlczak/tiq_profile_disabler/master/profile-disabler.json
 6. Click Add Custom Tool button
 7. You will find the tool in the Custom Tools tab named Profile Disabler
 
 # Usage
 To use it you need to login to Tealium iQ
 
-1. (if not done already) Go to [https://my.tealiumiq.com] and login with your account details
+1. (if not done already) Go to https://my.tealiumiq.com and login with your account details
 2. Launch Profile Disabler from Tealium Tools - Custom Tools section
 3. The list of accounts should be loaded.
 4. Select the account which you want to load profile list from and click Select Account
