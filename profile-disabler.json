@@ -4,8 +4,8 @@
     "description": "This tool is an utility to mass disable the chosen profiles.",
     "scripts": {
         "disabler" : {
-            "js": "https://raw.githubusercontent.com/AdamOlczak/tiq_profile_disabler/master/profile-disabler.js",
-            "template": "https://raw.githubusercontent.com/AdamOlczak/tiq_profile_disabler/master/profile-disabler.html",
+            "js": "https://cdn.jsdelivr.net/gh/AdamOlczak/tiq_profile_disabler/profile-disabler.js",
+            "template": "https://cdn.jsdelivr.net/gh/AdamOlczak/tiq_profile_disabler/profile-disabler.html",
             "remote_js": true,
             "remote_template": true,
             "auto_inject": true
